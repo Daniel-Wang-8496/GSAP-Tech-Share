@@ -2,6 +2,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { onMounted } from "vue";
+import SplashGsap from './components/SplashGsap.vue'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,34 +41,34 @@ onMounted(() => {
 <template>
   <header>
   </header>
-
+  <SplashGsap />
   <main>
     <div style="height: 100vh; display: flex; align-items: center; justify-content: center;">
       Scroll down to see the animation
     </div>
-    
+
   <!-- idk what cards could be. some features, values, etc. -->
   <div id="about">
       <div class="container">
-          <h2 class="reveal-text">How we work</h2>
+          <h2 class="reveal-text">What To Do</h2>
           <div class="about-grid pure-g">
               <div class="pure-u-1 pure-u-md-1-3">
                 <div class="about-card">
-                    <h3>1. Card</h3>
+                    <h3>Homework</h3>
                     <p>Test1</p>
                 </div>
               </div>
 
               <div class="pure-u-1 pure-u-md-1-3">
                 <div class="about-card">
-                    <h3>2. Card</h3>
+                    <h3>Chores</h3>
                     <p>Test2</p>
                 </div>
               </div>
               
               <div class="pure-u-1 pure-u-md-1-3">
                 <div class="about-card">
-                    <h3>3. Card</h3>
+                    <h3>Clubs</h3>
                     <p>Test3</p>
                 </div>
               </div>

@@ -1,43 +1,71 @@
 <script setup>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
+import { onMounted } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    const tl = gsap.timeline();
-    tl.from(".white", {xPercent: -100}).from(".black", {xPercent: 100}).from(".gray", {yPercent:-100})
+gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.create({
-        animation: tl,
-        trigger: "#container",
-        start: "top top",
-        end: "+=4000",
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
-    })
+onMounted(() => {
+  const tl = gsap.timeline();
+  tl.from(".white", { xPercent: -100 })
+    .from(".black", { xPercent: 100 })
+    .from(".gray", { yPercent: -100 });
+
+  ScrollTrigger.create({
+    animation: tl,
+    trigger: "#container",
+    start: "top top",
+    end: "+=4000",
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+  });
+});
 </script>
 
 <template>
-  <h2>Welcome to your todolist!</h2>
   <div id="container">
-    <div class="white"><p>1</p></div>
-    <div class="black"><p>2</p></div>
-    <div class="gray"><p>3</p></div>
+    <section class="white"><p>To</p></section>
+    <section class="black"><p>Do</p></section>
+    <section class="gray"><p>List</p></section>
   </div>
-
 </template>
 
 <style scoped>
-.white{
-    background-color: white;
+#container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
-.black{
-    background-color: black;
+
+
+.white,
+.black,
+.gray {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  width: 100vw;;
+  height: 100vh;
+  position: absolute; /* stack them on top of each other */
+  top: 0;
+  left: 0;
 }
-.black, p{
-    color: white
+
+.white {
+  background-color: white;
+  color: black;
 }
-.gray{
-    background-color: gray;
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.gray {
+  background-color: gray;
+  color: white;
 }
 </style>
