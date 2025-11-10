@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { onMounted } from "vue";
 import SplashGsap from './components/SplashGsap.vue'
+import EasingGsap from "./components/EasingGsap.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +66,7 @@ onMounted(() => {
                     <p>Test2</p>
                 </div>
               </div>
-              
+
               <div class="pure-u-1 pure-u-md-1-3">
                 <div class="about-card">
                     <h3>Clubs</h3>
@@ -75,7 +76,9 @@ onMounted(() => {
           </div>
       </div>
   </div>
-
+  <div>
+      <EasingGsap/>
+  </div>
 
   </main>
 </template>
