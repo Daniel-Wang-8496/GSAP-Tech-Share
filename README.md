@@ -29,5 +29,7 @@ npm run lint
 ## Extra Resources
 
 [Installation Setup](https://gsap.com/docs/v3/Installation)
+
 [Documentation](https://gsap.com/docs/v3/)
+
 [Cheatsheet](https://gsap.com/cheatsheet/)
