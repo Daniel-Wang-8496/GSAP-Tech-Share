@@ -23,7 +23,6 @@ onMounted(() => {
       });
   });
 
-
   gsap.from(".about-card", {
       duration: 0.8,
       opacity: 0,
