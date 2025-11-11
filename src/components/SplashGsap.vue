@@ -6,10 +6,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
+
   const tl = gsap.timeline();
-  tl.from(".white", { xPercent: -100 })
-    .from(".black", { xPercent: 100 })
-    .from(".gray", { yPercent: -100 });
+
+  // FADE IN VARIATION
+  tl.from(".white", {
+    opacity: 0,
+    y: 50,
+    ease: "power2.out",
+  })
+  .from(".black", {
+    opacity: 0,
+    y: 50,
+    ease: "power2.out",
+  })
+  .from(".gray", {
+    opacity: 0,
+    y: 50,
+    ease: "power2.out",
+  });
+
+  // SLIDING SCROLL VARIATION
+  // tl.from(".white", { xPercent: -100 })
+  //   .from(".black", { xPercent: 100 })
+  //   .from(".gray", { yPercent: -100 });
 
   ScrollTrigger.create({
     animation: tl,
@@ -21,6 +41,7 @@ onMounted(() => {
     anticipatePin: 1,
   });
 });
+
 </script>
 
 <template>
@@ -37,8 +58,9 @@ onMounted(() => {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);;
 }
-
 
 .white,
 .black,
